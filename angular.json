@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "MyShop"
+  "cli": {
+    "analytics": "a545d735-3a7d-4c37-af7a-8e803fb84627"
+  }
 }
