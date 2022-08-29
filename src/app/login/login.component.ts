@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider } from 'firebase/auth';
-import * as firebase from 'firebase/app';
-// import { firebase } from 'firebase/app';
-// import { getAuth } from 'firebase/auth';
-// import { initializeApp } from 'firebase/app';
+import { AuthService } from './../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +7,9 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor(private auth: AuthService) {}
 
   login() {
-    console.log(`object`);
-
-    // const googleAuthProvider = new firebase.GithubAuthProvider();
-    this.afAuth.signInWithPopup(new GoogleAuthProvider());
+    this.auth.login();
   }
 }
